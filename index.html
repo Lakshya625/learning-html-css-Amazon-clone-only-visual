@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="colours.css">
+    <title>mimalloc</title>
+</head>
+<body>
+        <header>
+        <div id = "navbar">
+            <a href="https://www.amazon.com" target="_blank">
+                <img id ="logo" src="https://i.pinimg.com/736x/cb/66/8c/cb668cd9b0bf1220046193aa966a19cc.jpg" alt="Amazon Logo">
+            </a>
+            <div id ="deliver">
+             <i id="loc" class="fa-solid fa-location-dot"></i> 
+             <span id="loc">Deliver to India</span>
+            </div>
+        <div class="search-bar">
+            <select class="all-options">
+                <option value="all">All </option>
+                <option value="all">All departments</option>
+                <option value="arts">arts & crafts</option>
+                <option value="electronics">Electronics</option>
+                <option value="automotive">automotive</option>
+                <option value="baby">baby</option>
+                <option value="beauty">beauty & personal care</option>
+                <option value="books">books</option>
+                <option value="boy's fashion">boy's fashion</option>
+                <option value="computer">computer</option>
+                <option value="deals">deals</option>
+                <option value="digital music">digital music</option>
+                <option value="electronics">electronics</option>
+                <option value="girl's fashion">girl's fashion</option>
+                <option value="health & household">health & household</option>
+                <option value="home & kitchen">home & kitchen</option>
+                <option value="industrial & scientific">industrial & scientific</option>
+                <option value="kindle store">kindle store</option>
+                <option value="luggage">luggage</option>
+                <option value="men's fashion">men's fashion</option>
+                <option value="movies & tv">movies & tv</option>
+                <option value="music, CDs, vinyle">music, CDs, vinyle</option>
+                <option value="pet supplies">pet supplies</option>
+                <option value="prime video">prime video</video></option>
+                <option value="software">software</option>
+                <option value="sports & outdoors">sports & outdoors</option>
+                <option value="tools & home improvemen">tools & home improvement</option>
+                <option value="toys & sports">toys & sports</option>
+                <option value="vedio games">vedio games</option>
+                <option value="women's fashion">women's fashion</option>
+            </select>
+            <input class="srch" id="srch-ar" type="text" placeholder="Search Amazon">
+            <button class="srch" id="srch-bt">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+        <script>
+         const select = document.querySelector(".all-options");
+
+          function adjustWidth() {
+           const temp = document.createElement("span");
+           temp.style.visibility = "hidden";
+           temp.style.position = "absolute";
+           temp.style.fontSize = window.getComputedStyle(select).fontSize;
+           temp.style.fontFamily = window.getComputedStyle(select).fontFamily;
+           temp.innerText = select.options[select.selectedIndex].text;
+
+           document.body.appendChild(temp);
+
+           select.style.width = temp.offsetWidth + 40 + "px";
+
+           document.body.removeChild(temp);
+           }
+
+           adjustWidth();
+
+           select.addEventListener("change", adjustWidth);
+           function adjustWidth() {
+
+            if(window.innerWidth <= 600){
+                select.style.width = "40px";
+                return;
+                }
+
+            const temp = document.createElement("span");
+
+            temp.style.visibility = "hidden";
+            temp.style.position = "absolute";
+            temp.style.fontSize = window.getComputedStyle(select).fontSize;
+            temp.style.fontFamily = window.getComputedStyle(select).fontFamily;
+
+            temp.innerText = select.options[select.selectedIndex].text;
+
+            document.body.appendChild(temp);
+
+            if(window.innerWidth > 600){
+                select.style.width = temp.offsetWidth + 40 + "px";
+                }
+
+             document.body.removeChild(temp);
+            }
+        </script>
+        <div class ="sign">
+            <p><span><a href="https://www.amazon.com/ap/signin?openid.return_to=https%3A%2F%2Fwww.amazon.com%2F%3Fref_%3Dnav_ya_signin&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=usflex&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0" target="_blank">Hello, sign in</a></span></p>
+            <p id="we" style="color: white;">Accounts & Lists</p>
+        </div>
+        <div class="return">
+            <a href="#">
+                <p>Returns</p>
+                <p>& Orders</p>
+            </a>
+        </div>    
+        <div class="cart">
+            <i class="fa-solid fa-cart-arrow-down"></i>
+            <span>Cart</span>
+        </div>
+        </div>
+        <br>
+        <div id="panal-all" class="panal">
+            <i id="bars" class="fa-solid fa-bars">All</i>
+       
+        <div id="ops" class="panal">
+            <p>Today's Deals</p>
+            <p>Gift Cards</p>
+            <p>Sell</p>
+            <p>Registry</p>
+            <p>Prime Video</p>
+            <p>Customer Service</p>
+        </div> 
+        </div>
+        </header>
+        <div class="hero-box">
+            <img src="hero-sec.jpg" id="hero">
+
+            <div class="blur-bottom"></div>
+        </div>
+        <div id="extra" class="deel">
+        You are on amazon.com. You can also shop on Amazon India for millions of products with fast local delivery.<a href="https://www.amazon.in" target="_blank">Click here to go to amazon.in</a>
+        </div>
+        <br>
+        <div class="row1">
+            <div id="box1">
+                <h2>Gaming Setup</h2>
+                <img src="https://apexgamingpcs.com/cdn/shop/articles/image_2024-03-21_124707780.png?v=1744755904&width=1600" id="img1">
+        </div>
+        <div id="box2">
+            <h2>Shop Fashion for less</h2>
+
+            <!-- First Row -->
+            <div class="fashion-row">
+
+                <div class="fashion-item">
+                    <img src="row2 photo 1.jpg" alt="jeans" id="img2">
+                    <p>Jeans under $50</p>
+                </div>
+
+                <div class="fashion-item">
+                    <img src="row2 photo 2.jpg" alt="top" id="img3">
+                    <p>Tops under $25</p>
+                </div>
+
+            </div>
+
+            <!-- Second Row -->
+            <div class="fashion-row">
+
+                <div class="fashion-item">
+                    <img src="row2 photo 4.jpg" alt="dress" id="img4">
+                    <p>Dress under $30</p>
+                </div>
+
+                <div class="fashion-item">
+                    <img src="row2 photo 5.jpg" alt="shoes" id="img5">
+                    <p>Shoes under $50</p>
+                </div>
+
+            </div>
+
+        </div>
+        
+            <div id="box3">
+            <h2>New home arrivals under $50</h2>
+
+            <!-- First Row -->
+            <div class="fashion-row">
+
+                <div class="fashion-item">
+                    <img src="row2 photo 6.jpg" alt="jeans" id="img2">
+                    <p>Kitchen and dinning</p>
+                </div>
+
+                <div class="fashion-item">
+                    <img src="row2 photo 7.jpg" alt="top" id="img3">
+                    <p>Home improvement</p>
+                </div>
+
+            </div>
+
+            <!-- Second Row -->
+            <div class="fashion-row">
+
+                <div class="fashion-item">
+                    <img src="row2 photo 8.jpg" alt="dress" id="img4">
+                    <p>decor</p>
+                </div>
+
+                <div class="fashion-item">
+                    <img src="row2 photo 9.jpg" alt="shoes" id="img5">
+                    <p>Bedding and bath</p>
+                </div>
+
+            </div>
+            </div>
+            <div id="box4">
+                <h2>Top categories in Kitchen appliances</h2>
+
+                <!-- First Row -->
+                <div class="single-row">
+                    <div class="single-item">
+                        <img src="main-image.jpg" alt="">
+                        <p>Cooker</p>
+                    </div>
+                </div>
+
+                <!-- Second Row  -->
+                <div class="triple-row">
+
+                    <div class="triple-item">
+                        <img src="row2 photo 11.jpg" alt="">
+                        <p>Coffee</p>
+                    </div>
+
+                    <div class="triple-item">
+                        <img src="row2 photo 12.jpg" alt="">
+                        <p>pots & pans</p>
+                    </div>
+
+                    <div class="triple-item">
+                        <img src="row2 photo 13.jpg" alt="">
+                        <p>kettle</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+            </div>
+        </div>
+        <br>
+        <div class="slider">
+            <h2>Best Sellers in cloths & shoes</h2>    
+            <img src="row2 photo 14.jpg">
+            <img src="row2 photo 15.jpg">
+            <img src="row2 photo 16.jpg">
+            <img src="row2 photo 17.jpg">
+            <img src="row2 photo 18.jpg">
+            <img src="row2 photo 19.jpg">
+            <img src="row2 photo 20.jpg">
+            <img src="row2 photo 21.jpg">
+            <img src="row2 photo 22.jpg">
+            <img src="row2 photo 23.jpg">
+            <img src="row2 photo 24.jpg">   
+            <img src="row2 photo 25.jpg">
+            <img src="row2 photo 26.jpg">
+            <img src="row2 photo 27.jpg">
+            <img src="row2 photo 28.jpg">
+        </div>
+        <br>
+        <div class="slider">
+            <h2>Popular items this season</h2>
+         <img src="row3 photo 1.jpg" ></img>
+         <img src="row3 photo 2.jpg" ></img>
+         <img src="row3 photo 3.jpg" ></img>
+         <img src="row3 photo 4.jpg" ></img>
+         <img src="row3 photo 5.jpg" ></img>
+         <img src="row3 photo 6.jpg" ></img>
+         <img src="row3 photo 7.jpg" ></img>
+         <img src="row3 photo 8.jpg" ></img>
+         <img src="row3 photo 9.jpg" ></img>
+         <img src="row3 photo 10.jpg"></img>
+         <img src="row3 photo 11.jpg"></img>
+         <img src="row3 photo 12.jpg"></img>
+         <img src="row3 photo 13.jpg"></img>
+         <img src="row3 photo 14.jpg"></img>
+         <img src="row3 photo 15.jpg"></img>
+        </div>
+        <br> 
+        <div class="row1">
+        <div id="box5">
+            <h2>Baby toys</h2>
+
+             <!-- First Row -->
+            <div class="shopping-row">
+
+                <div class="fashion-item">
+                    <img src="row3 photo 16.jpg" alt="slide" id="img6">
+                </div>
+
+                <div class="fashion-item">
+                    <img src="row3 photo 17.jpg" alt="toy" id="img7">
+
+                </div>
+
+            </div>
+
+             <!-- Second Row -->
+            <div class="shopping-row">
+
+                <div class="fashion-item">
+                    <img src="row4 img 4.jpg" alt="ship" id="img8">
+                </div>
+
+                <div class="fashion-item">
+                    <img src="row4 img 5.jpg" alt="toy" id="img9">
+                </div>
+            </div>
+
+        </div>
+        <div id="box6">
+            <h2>Gaming merchandise</h2>
+
+            <!-- First Row -->
+            <div class="shopping-row">
+
+                <div class="fashion-item">
+                    <img src="row4 img 6.jpg" alt="jeans" id="img10">
+                    <p>apparel</p>
+                </div>
+
+                <div class="fashion-item">
+                    <img src="row4 img 7.jpg" alt="top" id="img11">
+                    <p>hats</p>
+                </div>
+
+            </div>
+
+            <!-- Second Row -->
+            <div class="shopping-row">
+
+                <div class="fashion-item">
+                    <img src="row4 img 8.jpg" alt="dress" id="img13">
+                    <p>action figures</p>
+                </div>
+
+                <div class="fashion-item">  
+                    <img src="row4 img 9.jpg" alt="shoes" id="img14">
+                    <p>mugs</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="box7" style="background-color: white;"><h2>Toys for all ages</h2>
+
+            <!-- First Row -->
+            <div class="shopping-row">
+
+                <div class="fashion-item">
+                    <img src="row4 img 10.jpg" alt="toys" id="img15">
+                </div>
+
+                <div class="fashion-item">
+                    <img src="row4 img11.jpg" alt="toys" id="img16">
+                    
+                </div>
+
+            </div>
+
+            <!-- Second Row -->
+            <div class="shopping-row">
+
+                <div class="fashion-item">
+                    <img src="row4 img 12.jpg" alt="toys" id="img17">
+                    
+                </div>
+
+                <div class="fashion-item">
+                    <img src="row4 img 13.jpg" alt="toys" id="img18">
+                    
+                </div>
+
+            </div>
+
+        </div>
+        
+        
+        <div id="box8">
+            <h2>Gear up</h2>
+
+            <!-- First Row -->
+            <div class="shopping-row">
+
+                <div class="fashion-item">
+                    <img src="row4 img 14.jpg" alt="Clothing" id="img19">
+                    <p>Clothing</p>
+                </div>
+
+                <div class="fashion-item">
+                    <img src="row4 img 15.jpg" alt="Tracker" id="img20">
+                    <p>Tracker</p>
+                </div>
+
+            </div>
+
+            <!-- Second Row -->
+            <div class="shopping-row">
+
+                <div class="fashion-item">
+                    <img src="row4 img 16.jpg" alt="Equipment" id="img21">
+                    <p>Equipment</p>
+                </div>
+
+                <div class="fashion-item">
+                    <img src="row4 img 17.jpg" alt="Deals" id="img22">
+                    <p>Deals</p>
+                </div>
+
+            </div>
+
+        </div>
+        </div>
+        <br>
+        <div class="slider">
+            <h2>Top picks for India</h2>    
+            <img src="row5 photo 1.jpg">
+            <img src="row5 photo 2.jpg">
+            <img src="row5 photo 3.jpg">
+            <img src="row5 photo 4.jpg">
+            <img src="row5 photo 5.jpg">
+            <img src="row5 photo 6.jpg">
+            <img src="row5 photo 7.jpg">
+            <img src="row5 photo 8.jpg">
+            <img src="row5 photo 9.jpg">
+            <img src="row5 photo 10.jpg">
+            <img src="row5 photo 11.jpg">
+            <img src="row5 photo 12.jpg">
+            <img src="row5 photo 13.jpg">
+            <img src="row5 photo 14.jpg">
+            <img src="row5 photo 15.jpg">
+        </div>
+        <br>
+                <div class="row1">
+        <div id="box5">
+            <h2>Most-loved watches</h2>
+
+             <!-- First Row -->
+            <div class="shopping-row">
+
+                <div class="fashion-item">
+                    <img src="row6 photo 1.jpg" alt="watch" id="img23">
+                    <p>women</p>
+                </div>
+
+                <div class="fashion-item">
+                    <img src="row6 photo 2.jpg" alt="watch" id="img24">
+                    <p>men</p>
+                </div>
+
+            </div>
+
+             <!-- Second Row -->
+            <div class="shopping-row">
+
+                <div class="fashion-item">
+                    <img src="row6 photo 3.jpg" alt="watch" id="img25">
+                    <p>girl</p>
+                </div>
+
+                <div class="fashion-item">
+                    <img src="row6 photo 4.jpg" alt="watch" id="img26">
+                    <p>boy</p>
+                </div>
+            </div>
+
+        </div>
+        <div id="box6">
+            <h2>Level-up your beauty routine</h2>
+
+            <!-- First Row -->
+            <div class="shopping-row">
+
+                <div class="fashion-item">
+                    <img src="row6 photo 5.jpg" alt="makeup" id="img27">
+                    <p>makeup</p>
+                </div>
+
+                <div class="fashion-item">
+                    <img src="row6 photo 6.jpg" alt="brushes" id="img28">
+                    <p>brushes</p>
+                </div>
+
+            </div>
+
+            <!-- Second Row -->
+            <div class="shopping-row">
+
+                <div class="fashion-item">
+                    <img src="row6 photo 7.jpg" alt="sponges" id="img29">
+                    <p>sponges</p>
+                </div>
+
+                <div class="fashion-item">  
+                    <img src="row6 photo 8.jpg" alt="mirror" id="img30">
+                    <p>mirror</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="box7" style="background-color: white;">
+            <h2>Level-up your pc here</h2>
+
+            <!-- First Row -->
+            <div class="shopping-row">
+
+                <div class="fashion-item">
+                    <img src="row6 photo 9.jpg" alt="Laptop" id="img31">
+                    <p>Laptop</p>
+                </div>
+
+                <div class="fashion-item">
+                    <img src="row6 photo 10.jpg" alt="pc" id="img32">
+                    <p>PC</p>
+                </div>
+
+            </div>
+
+            <!-- Second Row -->
+            <div class="shopping-row">
+
+                <div class="fashion-item">
+                    <img src="row6 photo 11.jpg" alt="hard drives" id="img33">
+                    <p>Hard Drives</p>
+                </div>
+
+                <div class="fashion-item">
+                    <img src="row6 photo 12.jpg" alt="monitor" id="img34">
+                    <p>Monitor</p>
+                </div>
+
+            </div>
+
+        </div>
+        
+        
+        <div id="box8">
+            <h2>Deals on top categories</h2>
+
+            <!-- First Row -->
+            <div class="shopping-row">
+
+                <div class="fashion-item">
+                    <img src="row6 photo 13.jpg" alt="books" id="img35">
+                    <p>Books</p>
+                </div>
+
+                <div class="fashion-item">
+                    <img src="row6 photo 14.jpg" alt="fashion" id="img36">
+                    <p>Fashion</p>
+                </div>
+
+            </div>
+
+            <!-- Second Row -->
+            <div class="shopping-row">
+
+                <div class="fashion-item">
+                    <img src="row6 photo 15.jpg" alt="pc" id="img37">
+                    <p>PC</p>
+                </div>
+
+                <div class="fashion-item">
+                    <img src="row6 photo 16.jpg" alt="beauty" id="img38">
+                    <p>Beauty</p>
+                </div>
+
+            </div>
+
+        </div>
+        </div>
+        <br>
+        <div class="slider">
+            <h2>Best Sellers in Computer accessories</h2>    
+            <img src="row7 photo 1.jpg">
+            <img src="row7 photo 2.jpg">
+            <img src="row7 photo 3.jpg">
+            <img src="row7 photo 4.jpg">
+            <img src="row7 photo 5.jpg">
+            <img src="row7 photo 6.jpg">
+            <img src="row7 photo 7.jpg">
+            <img src="row7 photo 8.jpg">
+            <img src="row7 photo 9.jpg">
+            <img src="row7 photo 10.jpg">
+            <img src="row7 photo 11.jpg">
+            <img src="row7 photo 12.jpg">
+            <img src="row7 photo 13.jpg">
+            <img src="row7 photo 14.jpg">
+            <img src="row7 photo 15.jpg">
+        </div>
+        <br>
+                <div class="slider">
+            <h2>Best Sellers in Kitchen & Dining</h2>    
+            <img src="row8 photo 1.jpg">
+            <img src="row8 photo 2.jpg">
+            <img src="row8 photo 3.jpg">
+            <img src="row8 photo 4.jpg">
+            <img src="row8 photo 5.jpg">
+            <img src="row8 photo 6.jpg">
+            <img src="row8 photo 7.jpg">
+            <img src="row8 photo 8.jpg">
+            <img src="row8 photo 9.jpg">
+            <img src="row8 photo 10.jpg">
+            <img src="row8 photo 11.jpg">
+            <img src="row8 photo 12.jpg">
+            <img src="row8 photo 13.jpg">
+            <img src="row8 photo 14.jpg">
+            <img src="row8 photo 15.jpg">
+        </div>
+        <br>
+        <div class="row1">
+        <div id="box5">
+            <h2>Level up your gaming</h2>
+
+             <!-- First Row -->
+            <div class="shopping-row">
+
+                <div class="fashion-item">
+                    <img src="row9 photo 1.jpg" alt="gaming PC" id="img39">
+                    <p>Gaming PC</p>
+                </div>
+
+                <div class="fashion-item">
+                    <img src="row9 photo 2.jpg" alt="Xbox" id="img40">
+                    <p>Xbox</p>
+                </div>
+
+            </div>
+
+             <!-- Second Row -->
+            <div class="shopping-row">
+
+                <div class="fashion-item">
+                    <img src="row9 photo 3.jpg" alt="playstation" id="img41">
+                    <p>PlayStation</p>
+                </div>
+
+                <div class="fashion-item">
+                    <img src="row9 photo 4.jpg" alt="nintendo switch" id="img42">
+                    <p>Nintendo Switch</p>
+                </div>
+            </div>
+
+        </div>
+        <div id="box6">
+            <h2>Upgrade on Tech</h2>
+
+            <!-- First Row -->
+            <div class="shopping-row">
+
+                <div class="fashion-item">
+                    <img src="row9 photo 5.jpg" alt="pc" id="img43">
+                    <p>PC</p>
+                </div>
+
+                <div class="fashion-item">
+                    <img src="row9 photo 6.jpg" alt="wireless" id="img44">
+                    <p>Wireless</p>
+                </div>
+
+            </div>
+
+            <!-- Second Row -->
+            <div class="shopping-row">
+
+                <div class="fashion-item">
+                    <img src="row9 photo 7.jpg" alt="software" id="img45">
+                    <p>software</p>
+                </div>
+
+                <div class="fashion-item">  
+                    <img src="row9 photo 8.jpg" alt="home entertainment" id="img46">
+                    <p>Home Entertainment</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="box7" style="background-color: white;">
+            <h2>Finds for Home</h2>
+
+            <!-- First Row -->
+            <div class="shopping-row">
+
+                <div class="fashion-item">
+                    <img src="row9 photo 9.jpg" alt="kitchen" id="img47">
+                    <p>Kitchen</p>
+                </div>
+
+                <div class="fashion-item">
+                    <img src="row9 photo 10.jpg" alt="home decore" id="img48">
+                    <p>Home Decore</p>
+                </div>
+
+            </div>
+
+            <!-- Second Row -->
+            <div class="shopping-row">
+
+                <div class="fashion-item">
+                    <img src="row9 photo 11.jpg" alt="dining" id="img49">
+                    <p>Dining</p>
+                </div>
+
+                <div class="fashion-item">
+                    <img src="row9 photo 12.jpg" alt="smart home" id="img50">
+                    <p>Smart Home</p>
+                </div>
+
+            </div>
+
+        </div>
+        
+        
+        <div id="box8">
+            <h2>Explore more in Sports</h2>
+
+            <!-- First Row -->
+            <div class="shopping-row">
+
+                <div class="fashion-item">
+                    <img src="row9 photo 13.jpg" alt="cycling" id="img51">
+                    <p>Cycling</p>
+                </div>
+
+                <div class="fashion-item">
+                    <img src="row9 photo 14.jpg" alt="running" id="img52">
+                    <p>Running</p>
+                </div>
+
+            </div>
+
+            <!-- Second Row -->
+            <div class="shopping-row">
+
+                <div class="fashion-item">
+                    <img src="row9 photo 15.jpg" alt="fitness & exercise" id="img53">
+                    <p>Fitness & Exercise</p>
+                </div>
+
+                <div class="fashion-item">
+                    <img src="row9 photo 16.jpg" alt="golf" id="img54">
+                    <p>Golf</p>
+                </div>
+
+            </div>
+
+        </div>
+        </div>
+        <br>
+        <div class="slider">
+            <h2>Best Sellers in Beauty & Personal Care</h2>    
+            <img src="row10 photo 1.jpg">
+            <img src="row10 photo 2.jpg">
+            <img src="row10 photo 3.jpg">
+            <img src="row10 photo 4.jpg">
+            <img src="row10 photo 5.jpg">
+            <img src="row10 photo 6.jpg">
+            <img src="row10 photo 7.jpg">
+            <img src="row10 photo 8.jpg">
+            <img src="row10 photo 9.jpg">
+            <img src="row10 photo 10.jpg">
+            <img src="row10 photo 11.jpg">
+            <img src="row10 photo 12.jpg">
+            <img src="row10 photo 13.jpg">
+            <img src="row10 photo 14.jpg">
+            <img src="row10 photo 15.jpg">
+        </div>
+        <br>
+        <div id="it-is-about-to-end">Back to Top</div>
+        <div id="it-finally-ended">
+            <div>
+                <h4>Get to Know Us</h4>
+                <p>Careers</p>
+                <p>Blog</p>
+                <p>About Amazon</p>
+                <p>Investor Relations</p>
+                <p>Amazon Devices</p>
+                <p>Amazon Science</p>
+            </div>
+            <div>
+                <h4>Make Money with Us</h4>
+                <p>Sell products on Amazon</p>
+                <p>Sell on Amazon Business</p>
+                <p>Sell apps on Amazon</p>
+                <p>Become an Affiliate</p>
+                <p>Advertise Your Products</p>
+                <p>Self-Publish with Us</p>
+                <p>Host an Amazon Hub</p>
+                <p>See More Make Money with Us</p>
+            </div>
+            <div>
+                <h4>Amazon Payment Products</h4>
+                <p>Amazon Business Card</p>
+                <p>Shop with Points</p>
+                <p>Amazon Currency Converter</p>
+            </div>
+            <div>
+                <h4>Let us help you</h4>
+                <p>Amazon and COVID-19</p>
+                <p>Your Account</p>
+                <p>Your Orders</p>
+                <p>Shipping Rates & Policies</p>
+                <p>Returns & Replacements</p>
+                <p>Manage Your Content and Devices</p>
+                <p>Help</p>
+            </div>
+        </div>
+        <div id="last-div">
+            <div>
+                <h5>Amazon music</h5>
+                <p>Stream millions of songs</p>
+            </div>
+            <div>
+                <h5>Amazon Ads</h5>
+                <p>Reach customers wherever they spend their time</p>
+            </div>
+            <div>
+                <h5>6pm</h5>
+                <p>Score deals on fashion brands</p>
+            </div>
+            <div>
+                <h5>AbeBooks</h5>
+                <p>Books, art & collectibles</p>
+            </div>
+            <div>
+                <h5>ACX</h5>
+                <p>Audiobook Publishing Made Easy</p>
+            </div>
+            <div>
+                <h5>Amazon Business</h5>
+                <p>Everything for your business</p>
+            </div>
+            <div>
+                <h5>ACX</h5>
+                <p>Audiobook Publishing Made Easy</p>
+            </div>
+            <div>
+                <h5>Sell on Amazon</h5>
+                <p>Start a Selling Account</p>
+            </div>
+            <div>
+                <h5>Veeqo</h5>
+                <p>Shipping Software Inventory Management</p>
+            </div>
+            <div>
+                <h5>Amazon Global</h5>
+                <p>Ship orders internationally</p></div>
+            <div>
+                <h5>Amazon Web Services</h5>
+                <p>Scalable Cloud Computing Services</p>
+            </div>
+            <div>
+                <h5>Audible</h5>
+                <p>Listen to Books & Original Audio Performances</p>
+            </div>
+            <div>
+                <h5>Box Office Mojo</h5>
+                <p>Find Movie Box Office Data</p>
+            </div>
+            <div>
+                <h5>Goodreads</h5>
+                <p>Book reviews & recommendations</p>
+            </div>
+            <div>
+                <h5>IMDb</h5>
+                <p>Movies, TV & Celebrities</p>
+            </div>
+            <div>
+                <h5>IMDbPro</h5>
+                <p>Get the latest reports and data on the entertainment industry</p>
+            </div>
+            <div>
+                <h5>Kindle Direct Publishing</h5>
+                <p>Indian Digital & Print publishing made easy</p>
+            </div>
+            <div>
+                <h5>Prime Video Direct</h5>
+                <p>Video Distribution Made Easy</p>
+            </div>
+            <div>
+                <h5>Shopbob</h5>
+                <p>Designer Fashion Brands</p>
+            </div>
+            <div>
+                <h5>Woot!</h5>
+                <p>Deals and Shenanigans</p>
+            </div>
+            <div>
+                <h5>eero WIFI</h5>
+                <p>Stream 4k Videos in every room</p>
+            </div>
+            <div>
+                <h5>Blink</h5>
+                <p>Smart Home Security for everyone</p>
+            </div>
+            <div>
+                <h5>Zappos</h5>
+                <p>Shoes & Clothing</p>
+            </div>
+            <div>
+                <h5>Neighbors App</h5>
+                <p>Real-Time Crime & Safety Alerts</p>
+            </div>
+            <div>
+                <h5>PillPack</h5>
+                <p>Pharmacy Simplified</p>
+            </div>
+        </div>
+    </body>
+</html>
