@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="colours.css">
+    <script src="script.js" defer></script>
     <title>Amazon clone project</title>
 </head>
 <body>
@@ -55,52 +56,6 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
             </button>
         </div>
-        <script>
-         const select = document.querySelector(".all-options");
-
-          function adjustWidth() {
-           const temp = document.createElement("span");
-           temp.style.visibility = "hidden";
-           temp.style.position = "absolute";
-           temp.style.fontSize = window.getComputedStyle(select).fontSize;
-           temp.style.fontFamily = window.getComputedStyle(select).fontFamily;
-           temp.innerText = select.options[select.selectedIndex].text;
-
-           document.body.appendChild(temp);
-
-           select.style.width = temp.offsetWidth + 40 + "px";
-
-           document.body.removeChild(temp);
-           }
-
-           adjustWidth();
-
-           select.addEventListener("change", adjustWidth);
-           function adjustWidth() {
-
-            if(window.innerWidth <= 600){
-                select.style.width = "40px";
-                return;
-                }
-
-            const temp = document.createElement("span");
-
-            temp.style.visibility = "hidden";
-            temp.style.position = "absolute";
-            temp.style.fontSize = window.getComputedStyle(select).fontSize;
-            temp.style.fontFamily = window.getComputedStyle(select).fontFamily;
-
-            temp.innerText = select.options[select.selectedIndex].text;
-
-            document.body.appendChild(temp);
-
-            if(window.innerWidth > 600){
-                select.style.width = temp.offsetWidth + 40 + "px";
-                }
-
-             document.body.removeChild(temp);
-            }
-        </script>
         <div class ="sign">
             <p><span><a href="https://www.amazon.com/ap/signin?openid.return_to=https%3A%2F%2Fwww.amazon.com%2F%3Fref_%3Dnav_ya_signin&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=usflex&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0" target="_blank">Hello, sign in</a></span></p>
             <p id="we" style="color: white;">Accounts & Lists</p>
@@ -114,6 +69,7 @@
         <div class="cart">
             <i class="fa-solid fa-cart-arrow-down"></i>
             <span>Cart</span>
+            <span id="cart-count">0</span>
         </div>
         </div>
         <br>
@@ -138,6 +94,17 @@
         <div id="extra" class="deel">
         You are on amazon.com. You can also shop on Amazon India for millions of products with fast local delivery.<a href="https://www.amazon.in" target="_blank">Click here to go to amazon.in</a>
         </div>
+        <br>
+        <section class="product-section">
+            <h2>Featured Products</h2>
+            <div id="products-grid" class="products-grid"></div>
+
+            <div id="cart-container" class="cart-container">
+                <h3>Cart Items</h3>
+                <div id="cart-items">Your cart is empty.</div>
+                <p id="cart-total">Total: $0.00</p>
+            </div>
+        </section>
         <br>
         <div class="row1">
             <div id="box1">
